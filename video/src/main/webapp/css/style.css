@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+
+/****页头****/
+
+.logo_search{padding:10px 10px 0px 10px;overflow:hidden;}
+.logo_search .logo{display:block;float:left;width:30%;}
+.logo_search .search{float:left;padding-left:10px;}
+.logo_search .search .txtinput{background:#e8e8e8;border:0px;border-radius:2px;display:block;float:left;text-indent:5px;}
+.logo_search .search .btnsubmit{display:block;float:left;height:30px;margin-left:5px;}
+
+/*****导航栏*****/
+.nav{position:relative;height:50px;padding:10px 10px 0px 10px;}
+.nav ul{height:50px;border-top:1px solid #e5e5e5;overflow:hidden;background:#fff;}
+.nav ul li{float:left;width:20%;height:49px;}
+.nav ul li a{display:block;height:44px;border-bottom:5px solid #fff; line-height:44px;width:100%;text-align:center;font-size:16px;}
+.nav ul li:nth-child(4){margin-right:20%;}
+.nav ul .active a{border-bottom:5px solid #cc3324;}
+.nav .navmore{position:absolute;right:10px;top:10px;width:20%;height:49px;display:block;border:0px;background:none;}
+.nav .navmore span{color:#222472;display:block;width:100%;height:100%;line-height:35px;font-size:35px;}
+
+/******视频列表*******/
+section{padding:0 10px; overflow:hidden;}
+.typelist{margin-bottom:5px;overflow:hidden;}
+.hd{height:40px;overflow:hidden;padding:0 10px;}
+.hd a{display:block;height:40px;line-height:40px;color:#cc3324;}
+.hd .title{float:left;}
+.hd .more{float:right;}
+.videolist li{background:#fff;float:left;}
+.videolist .pic{display:block;}
+.videolist .name{display:block;height:25px;line-height:25px;overflow:hidden;font-size:14px;color:#4c4c4c;padding-left:5px;}
+
+
+/****视频详情******/
+.detail_name{font-size:16px;font-weight:nomarl;height:40px;line-height:40px;}
+.videodetail{background:#fff;padding:10px;}
+.videodetail .title{display:block;color:#cc3324;font-size:16px;width:100%;height:40px;line-height:40px;}
+
+/*****页底******/
+.copy,
+.footnav{height:30px;line-height:30px;text-align:center;color:#666;}
+.footnav{padding-top:15px;}
+.footnav a{padding:0 10px;color:#666;}
+
+@media screen and (min-width: 320px) {
+	.logo_search .search{width:66%;}
+	.logo_search .search .txtinput{width:81%;height:26px;line-height:26px;}
+	.logo_search .search .btnsubmit img{width:26px; height:26px;}
+	.videolist li{margin:0 0 15px 8px;width:46%;}
+	.videolist .pic,
+	.videolist .pic img{width:138px;height:79px;overflow:hidden;}
+}
+@media screen and (min-width: 375px) {
+	.logo_search .search{width:67%;}
+	.logo_search .search .txtinput{width:83%;height:32px;line-height:32px;}
+	.logo_search .search .btnsubmit img{width:32px; height:32px;}
+	.videolist li{margin:0 0 15px 11px;width:45%;}
+	.videolist .pic,
+	.videolist .pic img{width:160px;height:90px;overflow::hidden;}
+}
+
+
+@media screen and (min-width: 480px) {
+	
+}
+@media screen and (min-width: 640px) {
+
+
+}

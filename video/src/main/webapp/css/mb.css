@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+body{font-family: "Microsoft YaHei","微软雅黑";background:#f2f2f2;}
+em{font-style: normal;}
+input,button,select,textarea{outline:none;}
+* {margin:0; padding:0;}
+img {border:0;}
+ul li {list-style:none;}
+a{text-decoration:none;color:#353535;font-family:"微软雅黑","Microsoft YaHei"}
+a:hover{text-decoration:none;}
+div:after{content:""; display: block; height: 0; clear: both; visibility: hidden;}
+h1,h2,h3,h4,h5,h6{ font-family:"Microsoft YaHei";font-weight: normal;}
+.htmleditor{clear:both;line-height:1.8;font-size:14px;}
+.htmleditor p {display:block;margin-bottom:10px;font-size:14px;overflow:hidden;}
+
+header{background:#fff;}
