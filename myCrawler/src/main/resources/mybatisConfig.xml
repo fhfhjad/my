@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+
+	<typeAliases>
+		<!-- <typeAlias alias="BatchTaskRecordEntityExt" type="com.chinasofti.rcloud.boss.modules.taskrecord.domain.BatchTaskRecordEntityExt" 
+			/> -->
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				
+				<property name="url" value="jdbc:mysql://localhost:3306/znke_b2b" />
+				<property name="username" value="root" />
+				<property name="password" value="root" /> 
+				
+				<!-- 阿里测试环境 -->
+				<!-- 
+				<property name="url" value="jdbc:mysql://10.171.114.218:3066/znke_b2b_test" />
+				<property name="username" value="znke_ds_test" />
+				<property name="password" value="ZNK_ds_test" /> 
+				 -->
+				<!-- 阿里正式环境 -->
+				<!-- <property name="url" value="jdbc:mysql://rdsvbijbbvbijbb.mysql.rds.aliyuncs.com:3306/znke_b2b" />
+				<property name="username" value="znke_ds" />
+				<property name="password" value="ZNK_ds_2015" />  -->
+				
+				
+				<!-- <property name="url" value="jdbc:mysql://182.92.115.24:3066/znke_b2b_test" />
+				<property name="username" value="znke_ds_test" />
+				<property name="password" value="ZNK_ds_test" /> -->
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<!--userMapper.xml装载进来 同等于把“dao”的实现装载进来 -->
+		<mapper resource="com/znc/jd/dao/JdCategoryMapper.xml" />
+		<mapper resource="com/znc/jd/dao/JdGoodsMapper.xml" />
+		<mapper resource="com/znc/jd/dao/JdGoodsAttrvalMapper.xml" />
+		<mapper resource="com/znc/jd/dao/JdGoodsImageMapper.xml" />
+		
+		<mapper resource="com/znc/jd/dao/PShopProductMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PShopBrandMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PShopCategoryMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PShopPtypeMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PProductAttributeValueMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PProductImageGroupMapper.xml" />
+		<mapper resource="com/znc/jd/dao/PProductTitleImageMapper.xml" />
+		
+		
+		<!-- <mapper resource="com/znc/mycrawler/dao/ProductMobileMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductMobileAccessoryMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductMobileAccessoryAttrMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductAttributeValueMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductPadMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductImageMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductModelMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductModelImageMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductModelExtraAttrMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductClassfiyMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductExtraAttrMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/ProductTitleImageMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/SalesPropertiesMapper.xml" />
+		<mapper resource="com/znc/mycrawler/dao/expand/ProductImageMapperExt.xml" />
+		<mapper resource="com/znc/mycrawler/dao/expand/ProductTitleImageMapperExt.xml" />
+		<mapper resource="com/znc/mycrawler/dao/expand/ProductModelMapperExt.xml" />
+		<mapper resource="com/znc/mycrawler/dao/expand/ProductMobileAccessoryAttrMapperExt.xml" />
+		<mapper resource="com/znc/mycrawler/dao/expand/ProductAttributeValueMapperExt.xml" /> -->
+	</mappers>
+
+
+	
+</configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.znc.mycrawler.dao.expand.ProductTitleImageMapperExt" >
+ 
+  <!-- <resultMap id="PermissionToRoleResultMap" type="com.chinasofti.rcloud.boss.domain.PermissionToRoleEntity" 
+  		extends="com.chinasofti.rcloud.boss.dao.PermissionToRoleEntityMapper.BaseResultMap">
+  		
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    role_code, function_code, create_user, create_time, modify_user, modify_time
+  </sql> -->
+  
+  <insert id="insertProductTitleImageList" parameterType="java.util.List">
+      insert into product_title_image (id, pid, image_url) values 
+     <foreach collection="list"  item="item" index="index" separator="," >
+     (
+     	#{item.id,jdbcType=BIGINT}, 
+     	#{item.pid,jdbcType=VARCHAR}, 
+     	#{item.imageUrl,jdbcType=VARCHAR}
+     )
+     </foreach>
+  </insert>
+  
+</mapper>

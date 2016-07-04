@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration  
+      PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+      "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="./lib/mysql-connector-java-5.1.27.jar"/>
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
+            connectionURL="jdbc:mysql://192.168.3.5:3306/znke_b2b?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
+            userId="root"  
+            password="htjx123456">
+        </jdbcConnection>  
+  
+        <javaTypeResolver >  
+            <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver>  
+  
+        <!-- generate Model -->  
+        <javaModelGenerator targetPackage="com.znc.jd.domain" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>  
+          
+        <!-- generate xml -->  
+        <sqlMapGenerator targetPackage="com.znc.jd.dao"  targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />  
+        </sqlMapGenerator>  
+          
+        <!-- generate Mapper -->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.znc.jd.dao"  targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />  
+            <property name="rootInterface" value="com.znc.jd.dao.util.BaseDao" />
+        </javaClientGenerator>
+        
+    	<table tableName="jd_category" domainObjectName="JdCategory"></table>
+    	<table tableName="jd_goods" domainObjectName="JdGoods"></table>
+    	<table tableName="jd_goods_attrval" domainObjectName="JdGoodsAttrval"></table>
+    	<table tableName="jd_goods_image" domainObjectName="JdGoodsImage"></table>
+
+    	<table tableName="p_shop_product" domainObjectName="PShopProduct"></table>
+    	<table tableName="p_shop_category" domainObjectName="PShopCategory"></table>
+    	<table tableName="p_product_attribute_value" domainObjectName="PProductAttributeValue"></table>
+    	<table tableName="p_product_image_group" domainObjectName="PProductImageGroup"></table>
+    	<table tableName="p_product_title_image" domainObjectName="PProductTitleImage"></table>
+    	<table tableName="p_shop_ptype" domainObjectName="PShopPtype"></table>
+    	<table tableName="p_shop_brand" domainObjectName="PShopBrand"></table>
+    </context>
+
+</generatorConfiguration>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.znc.mycrawler.dao.expand.ProductModelMapperExt">
+
+
+	<!-- <insert id="insertProductImageList" parameterType="java.util.List"> 
+		insert into product_image (id, pid, image_url) values <foreach collection="list" 
+		item="item" index="index" separator="," > ( #{item.id,jdbcType=BIGINT}, #{item.pid,jdbcType=VARCHAR}, 
+		#{item.imageUrl,jdbcType=VARCHAR} ) </foreach> </insert> -->
+
+
+	<select id="getModelByProduct" resultType="map" parameterType="map">
+
+		SELECT id,brand ,pmodel,classfiy_code
+		FROM
+		${tableName}
+		WHERE NOT ISNULL(brand)
+		group by brand,pmodel
+
+	</select>
+
+	<select id="getColumnName" resultType="map" parameterType="map">
+
+		select COLUMN_NAME,COLUMN_COMMENT from information_schema.COLUMNS
+		where table_name = #{tableName};
+
+	</select>
+
+	<select id="getAttributeValues" resultType="String"
+		parameterType="map">
+
+		select ${attribute}
+		from ${tableName}
+		where brand =#{brand} and pmodel =#{pmodel}
+		group by ${attribute};
+
+	</select>
+	
+	<insert id="insertProductModelImageList" parameterType="java.util.List">
+      insert into product_model_image (id, pmid, image_url) values 
+     <foreach collection="list"  item="item" index="index" separator="," >
+     (
+     	#{item.id,jdbcType=BIGINT}, 
+     	#{item.pmid,jdbcType=VARCHAR}, 
+     	#{item.imageUrl,jdbcType=VARCHAR}
+     )
+     </foreach>
+  </insert>
+  
+  <update id="updateProduct" parameterType="map">
+  
+  UPDATE product_mobile 
+  SET product_name = #{productName} 
+  WHERE id = #{id};
+  	
+  </update>
+
+
+</mapper>
