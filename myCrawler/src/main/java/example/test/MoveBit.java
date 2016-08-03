@@ -31,7 +31,7 @@ public class MoveBit {
 		// num <<= 1;
 
 		// 右移一位
-		num >>>= 3;
+		num >>>= 3; // test
 		printInfo(num);
 
 	}
