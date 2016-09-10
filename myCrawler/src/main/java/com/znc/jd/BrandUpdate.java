@@ -21,7 +21,7 @@ public class BrandUpdate {
 
 		BrandService bb = new BrandService();
 		List<PShopBrand> ll = bb.queryBrand();
-		ll.forEach(action -> {
+		/*ll.forEach(action -> {
 			String name = action.getName();
 			// name = name.substring(0,name.indexOf("（"));
 			name = name.replaceAll("（", "").replaceAll("）", "");
@@ -29,7 +29,7 @@ public class BrandUpdate {
 			action.setFirstcharacter(PinyinUtil.cn2FirstSpell(name)
 					.substring(0, 1).toUpperCase());// 首字母
 			bb.updateBrand(action);
-		});
+		});*/
 		System.out.println("success");
 
 	}
